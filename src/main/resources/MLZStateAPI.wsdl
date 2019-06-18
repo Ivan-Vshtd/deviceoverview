@@ -1,0 +1,58 @@
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://services.business.admin.ceyeclon.com/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             targetNamespace="http://services.business.admin.ceyeclon.com/" name="MLZStateAPI">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://services.business.admin.ceyeclon.com/" schemaLocation="https://ad-biel-00001.ceyeclon.com:443/MLZStateAPI/MLZStateAPI?xsd=1"/>
+        </xsd:schema>
+    </types>
+    <message name="ping">
+        <part name="parameters" element="tns:ping"/>
+    </message>
+    <message name="pingResponse">
+        <part name="parameters" element="tns:pingResponse"/>
+    </message>
+    <message name="getDeviceList">
+        <part name="parameters" element="tns:getDeviceList"/>
+    </message>
+    <message name="getDeviceListResponse">
+        <part name="parameters" element="tns:getDeviceListResponse"/>
+    </message>
+    <portType name="MLZStateAPI">
+        <operation name="ping">
+            <input wsam:Action="http://services.business.admin.ceyeclon.com/MLZStateAPI/pingRequest" message="tns:ping"/>
+            <output wsam:Action="http://services.business.admin.ceyeclon.com/MLZStateAPI/pingResponse" message="tns:pingResponse"/>
+        </operation>
+        <operation name="getDeviceList">
+            <input wsam:Action="http://services.business.admin.ceyeclon.com/MLZStateAPI/getDeviceListRequest" message="tns:getDeviceList"/>
+            <output wsam:Action="http://services.business.admin.ceyeclon.com/MLZStateAPI/getDeviceListResponse" message="tns:getDeviceListResponse"/>
+        </operation>
+    </portType>
+    <binding name="MLZStateAPIPortBinding" type="tns:MLZStateAPI">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="ping">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getDeviceList">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="MLZStateAPI">
+        <port name="MLZStateAPIPort" binding="tns:MLZStateAPIPortBinding">
+            <soap:address location="https://ad-biel-00001.ceyeclon.com:443/MLZStateAPI/MLZStateAPI"/>
+        </port>
+    </service>
+</definitions>

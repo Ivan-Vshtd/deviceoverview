@@ -1,0 +1,17 @@
+<mat-card class="example-card" *ngIf="device" [style.background]=checkColor(device.eventType)>
+    <mat-card-header>
+        <mat-card-title>Device log of: {{device.name}} with id: {{device.id}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>name: {{device.name}}</p>
+        <p> id: {{device.id}}</p>
+        <p>ip: {{device.ip}}</p>
+        <p>current status: {{device.eventType}}</p>
+        <p>last online: {{device.lastOnLineTime}}</p>
+        <p>status log:</p>
+        <p *ngFor="let log of device.stateLog"
+        [style.background]=checkColor(log.eventType)>
+            {{log.time}} --- {{log.eventType}}
+        </p>
+    </mat-card-content>
+</mat-card>

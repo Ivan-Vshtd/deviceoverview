@@ -1,0 +1,17 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-card {
+  width: 450px;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+.mat-card-title{
+  font-size: 26px;
+}
+
+.mat-card-content{
+  font-size: 20px;
+}

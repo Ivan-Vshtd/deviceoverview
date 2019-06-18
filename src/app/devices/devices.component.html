@@ -1,0 +1,24 @@
+
+<div id="header">Devices status page</div>
+<mat-grid-list cols="9" rowHeight="4:3">
+    <mat-grid-tile
+            *ngFor="let device of devices" (click)="showDeviceLog(device.id)"
+            [style.background]=checkColor(device.eventType)>
+        {{device.name}}<br/>
+        id: {{device.id}}<br/>
+        ip: {{device.ip}}<br/>
+        <br/><br/>
+        <mat-grid-tile-footer>
+            <div>
+                <mat-grid-list class="inner_grid" cols="5" rowHeight="2:1">
+                    <mat-grid-tile
+                                   *ngFor="let log of device.lastChecks"
+                                   [style.background]=checkColor(log.eventType)
+                                   [style.height]=getHeight()
+                                  >
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+</mat-grid-list>

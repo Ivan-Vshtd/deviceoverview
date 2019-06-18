@@ -1,0 +1,31 @@
+
+#header{
+  width: 350px;
+  margin-top: 4%;
+  margin-left: 43%;
+  margin-bottom: 4%;
+  font-style: italic;
+  font-size: 28px;
+  font-weight: bold;
+  color: #2C333F;;
+}
+
+mat-grid-list {
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+mat-grid-tile{
+  cursor: pointer;
+}
+
+mat-grid-tile:hover{
+  filter: brightness(120%);
+}
+
+.inner_grid{
+  width: 80px;
+  margin-bottom: 10%;
+  margin-left: 40%
+}
